@@ -1,7 +1,8 @@
 const express = require('express')
 const route = express()
+const {getAll} = require('../model/models')
 
-route.get("/",(req,res)=>{console.log("Passou na rota k ")})
+route.get("/", getAll)
 
 
 
