@@ -1,16 +1,26 @@
 require('dotenv').config();
 
+
 const pool = require('../database/pool')
+
+
 
 const getAll = async (req,res) =>{
       
 
-    console.log("Passou")
-
    try {
-    const result = pool.query('select * from usuarios')
+
+     console.log("Passou")
+
+     const users = await pool('users').select('*');
+     console.log(users);
+    
+    return console.log('conectou')
+    
    } catch (error) {
-    console.log(error.message)
+    console.log("*******************************")
+    console.log(error)
+    console.log("*******************************")
    }
 
 }
